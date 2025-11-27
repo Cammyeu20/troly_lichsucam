@@ -91,22 +91,22 @@ if st.button("📖 Trả lời"):
         audio_html = f"""
         <div id="tts"></div>
         <script>
-            (function(){{
-                const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
-                const unlocked = {unlocked};
-                const audio = document.createElement('audio');
-                audio.src = "data:audio/mp3;base64,{audio_b64}";
-                audio.controls = true;
-                audio.playsInline = true;
-                document.getElementById("tts").appendChild(audio);
+          (function(){{
+            const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+            const unlocked = {unlocked};
+            const audio = document.createElement('audio');
+            audio.src = "data:audio/mp3;base64,{audio_b64}";
+            audio.controls = true;
+            audio.playsInline = true;
+            document.getElementById("tts").appendChild(audio);
 
-                if (!isIOS && unlocked) {{
-                    audio.autoplay = true;
-                    audio.play().catch(()=>{});
-                }}
-            }})();
-        </script>
-        """
+            if (!isIOS && unlocked) {{
+                audio.autoplay = true;
+                audio.play().catch(()=>{{}});
+            }}
+        }})();
+    </script>
+    """
 
         components.html(audio_html, height=120)
 
