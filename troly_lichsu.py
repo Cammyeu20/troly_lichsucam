@@ -1,3 +1,4 @@
+
 import streamlit as st
 from gtts import gtts
 from io import BytesIO
@@ -16,7 +17,7 @@ if "audio_unlocked" not in st.session_state:
     st.session_state["audio_unlocked"] = False
 
 st.title("📚 TRỢ LÝ LỊCH SỬ VIỆT NAM")
-st.write("👉 Bấm **BẬT ÂM THANH** (chỉ 1 lần), sau đó nhập câu hỏi rồi bấm **Trả lời**.")
+st.write("👉 Bấm *BẬT ÂM THANH* (chỉ 1 lần), sau đó nhập câu hỏi rồi bấm *Trả lời*.")
 st.write("📱 Trên hệ điều hành IOS, bạn cần bấm nút ▶ để nghe giọng nói (quy định của Safari).")
 st.write("📱 Trên hệ điều hành android,máy tính bảng,laptop,máy tính bàn không cần bấm nút ▶ để nghe vì nó tự nói .")
 # ======================
@@ -78,7 +79,7 @@ if st.button("📖 Trả lời"):
     # 🎙️ TẠO GIỌNG NÓI
     try:
         mp3_fp = BytesIO()
-        gTTS(text=tra_loi, lang="vi").write_to_fp(mp3_fp)
+gTTS(text=tra_loi, lang="vi").write_to_fp(mp3_fp)
         mp3_fp.seek(0)
         audio_b64 = base64.b64encode(mp3_fp.read()).decode()
     except Exception as e:
@@ -111,3 +112,4 @@ if st.button("📖 Trả lời"):
         # 🧭 Thông báo phù hợp với tất cả các thiết bị
         if st.session_state["audio_unlocked"]:
             
+
